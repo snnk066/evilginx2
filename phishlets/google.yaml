@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@snnk066 
-An0nUD4Y
-/
-Evilginx2-Phishlets
-11
-5445
-Code
-Issues
-6
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Evilginx2-Phishlets/google.yaml
-@An0nUD4Y
-An0nUD4Y A little modifications
-Latest commit ef0a5f9 on 30 May 2020
- History
- 1 contributor
-100 lines (94 sloc)  5.13 KB
-  
 author: '@hash3liZer'
 min_ver: '2.3.0'
 proxy_hosts:
